@@ -27,10 +27,3 @@ func Connect() *mongo.Client {
 
 	return client
 }
-
-func GetCollection(dbName string, CollectionName string) *mongo.Collection {
-	client := Connect()
-	collection := client.Database(dbName).Collection(CollectionName)
-
-	return collection
-}

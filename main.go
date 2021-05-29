@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -18,13 +17,12 @@ import (
 
 func main() {
 	s := repo.Service{
-		R: repo.Repository{
+		R: &repo.Repository{
 			Client:     mcon.Connect(),
 			Db:         cfg.Db,
 			Collection: cfg.Collection,
 		},
 	}
-	fmt.Println(s.R.Db)
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	defer func() {
 		if err := s.R.Client.Disconnect(ctx); err != nil {
