@@ -8,19 +8,20 @@
 - [x] Go
 - [x] GorilaMux
 
-```
+
 
 ### API
 
-- Endpoints
-|         Endpoint         	| HTTP 	|
-|:------------------------:	|:----:	|
-| /v1/planet               	| POST 	|
-| /v1/planet/{id}          	| GET  	|
-| /v1/planet/search/{name} 	| GET  	|
-| /v1/planet/films/{id}    	| GET  	|
-| /v1/planet               	| GET  	|
-| /v1/planet/{id}          	| GET  	|
+
+| Endpoint | HTTP |
+|:-:|:-:|
+| /v1/planet | POST |
+| /v1/planet/{id} | GET |
+| /v1/planet/search/{name} | GET |
+| /v1/planet/films/{id} | GET |
+| /v1/planet | GET |
+| /v1/planet/{id} | GET |
+
 
 
 ### Running the project
@@ -37,6 +38,9 @@ docker-compose up --build
 ```
 
 ### Requisitions
+
+
+[Insomnia requisitions](https://github.com/carlosd-ss/freterapido/tree/master/.insomnia)
 
 
 ### See the project on browser
