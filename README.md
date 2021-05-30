@@ -40,7 +40,7 @@ docker-compose up --build
 ### Requisitions
 
 
-[Insomnia requisitions](https://github.com/carlosd-ss/freterapido/tree/master/.insomnia)
+[Insomnia requisitions](https://github.com/carlosd-ss/star-wars/tree/master/.github)
 
 
 ### See the project on browser
