@@ -10,7 +10,7 @@ import (
 )
 
 func Connect() *mongo.Client {
-	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
+	clientOptions := options.Client().ApplyURI("mongodb+srv://carlosdss22:002212@cd.4dcgc.mongodb.net/starwars?retryWrites=true&w=majority")
 	var ctx = context.TODO()
 	// Connect to MongoDB
 	client, err := mongo.Connect(ctx, clientOptions)
@@ -23,7 +23,6 @@ func Connect() *mongo.Client {
 		log.Fatal(err)
 	}
 	fmt.Println("Connected to MongoDB!")
-	defer client.Disconnect(ctx)
 
 	return client
 }

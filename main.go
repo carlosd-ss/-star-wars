@@ -7,18 +7,17 @@ import (
 	"os"
 	"time"
 
-	mcon "github.com/carlosd-ss/-star-wars/pkg/mongo"
+	"github.com/carlosd-ss/star-wars/controller/handler"
 
-	"github.com/carlosd-ss/-star-wars/controller/route"
+	"github.com/carlosd-ss/star-wars/controller/route"
 
-	cfg "github.com/carlosd-ss/-star-wars/pkg/config"
-	"github.com/carlosd-ss/-star-wars/repo"
+	cfg "github.com/carlosd-ss/star-wars/pkg/config"
 )
 
 func main() {
-	s := repo.Service{
-		R: &repo.Repository{
-			Client:     mcon.Connect(),
+	s := handler.Service{
+		R: &handler.Repository{
+			Client:     cfg.Connect,
 			Db:         cfg.Db,
 			Collection: cfg.Collection,
 		},
@@ -33,8 +32,8 @@ func main() {
 	srv := &http.Server{
 		ReadTimeout:  30 * time.Second,
 		WriteTimeout: 30 * time.Second,
-		Addr:         ":8080",
-		Handler:      route.Router(),
+		Addr:         cfg.Port,
+		Handler:      route.Router(s.R),
 		ErrorLog:     log.New(os.Stderr, "logger: ", log.Lshortfile),
 	}
 	err := srv.ListenAndServe()

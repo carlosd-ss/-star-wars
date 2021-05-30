@@ -1,4 +1,4 @@
-module github.com/carlosd-ss/-star-wars
+module github.com/carlosd-ss/star-wars
 
 go 1.16
 
